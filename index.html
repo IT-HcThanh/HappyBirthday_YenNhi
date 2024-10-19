@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy birthday</title>
+<link rel="stylesheet" href="./style.css">
+<!-- Link CSS Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+</head>
+<body>
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" tabindex="-1">
+    
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="img"><img src="./images/2.png" alt=""></div>
+            <div class="modal-header">
+                <h5 id="cl-pink" class="modal-title">Vui lòng nhập mật khẩu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="password" id="passwordInput" class="form-control" placeholder="Mật khẩu" aria-label="Mật khẩu" aria-describedby="basic-addon1">
+                <p>Mật khẩu ghi liền không dấu*</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+                <button type="button" id="confirmButton" class="btn btn-pink">Đồng ý</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script để hiển thị modal khi trang được tải -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
+        myModal.show();
+    });
+
+    // Lắng nghe sự kiện click vào nút "Đồng ý"
+    document.getElementById('confirmButton').addEventListener('click', function() {
+        // Lấy giá trị mật khẩu từ input
+        var password = document.getElementById('passwordInput').value;
+
+        // Kiểm tra nếu mật khẩu đúng
+        if (password === '19102010') { // Thay 'a' bằng mật khẩu thực của bạn
+            // Chuyển hướng sang trang home.html
+            window.location.href = 'home.html';
+        } else {
+            // Nếu mật khẩu sai, hiển thị thông báo lỗi
+            alert('Mật khẩu không đúng. Vui lòng thử lại.');
+        }
+    });
+</script>
+
+<!-- Link JavaScript Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
